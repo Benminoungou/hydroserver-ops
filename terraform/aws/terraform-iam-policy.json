@@ -5,12 +5,14 @@
             "Sid": "AllowCreationOfHydroServerEC2Roles",
             "Effect": "Allow",
             "Action": [
+                "iam:ListInstanceProfilesForRole",
                 "iam:GetInstanceProfile",
                 "iam:AddRoleToInstanceProfile",
                 "iam:RemoveRoleFromInstanceProfile",
                 "iam:CreateInstanceProfile",
                 "iam:DeleteInstanceProfile",
                 "iam:CreateRole",
+                "iam:DeleteRole",
                 "iam:PutRolePermissionsBoundary"
             ],
             "Resource": [
@@ -22,7 +24,8 @@
             "Sid": "AllowAttachmentOfPoliciesToHydroServerEC2Roles",
             "Effect": "Allow",
             "Action": [
-                "iam:AttachRolePolicy"
+                "iam:AttachRolePolicy",
+                "iam:DetachRolePolicy"
             ],
             "Resource": "arn:aws:iam::YOUR_ACCOUNT_ID:role/hydroserver-ec2*",
             "Condition": {
